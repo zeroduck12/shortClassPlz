@@ -5,11 +5,27 @@
 <mapper namespace="User">
 	
 	<insert id="join" parameterType="userdto">
-		INSERT INTO "USER" values(#{userid}, #{userpw}, #{username}, #{userphone}, #{useraddr})
+		INSERT INTO "USER" values(#{userid}, #{userpw}, #{username}, #{userphone}, #{zipcode}, #{addr}, #{addrdetail}, #{addretc})
 	</insert>
 	
 	<select id="login" parameterType="hashmap" resultType="_int">
 		SELECT count(*) FROM "USER" WHERE USERID = #{userid} AND USERPW = #{userpw}
 	</select>
+
+	<select id="checkId" parameterType="string" resultType="_int">
+		SELECT count(*) FROM "USER" WHERE USERID = #{userid}
+	</select>
+	
+<!-- 	dbeaver에서 칼럼하나 삭제하고 4개 추가함 추가함
+ALTER TABLE "USER" DROP (useraddr);
+
+ALTER TABLE "USER" add(
+	zipcode		varchar2(100),
+	addr		varchar2(300),
+	addrdetail	varchar2(1000),
+	addretc		varchar2(500)
+);
+ -->
+	
 	
 </mapper>

@@ -17,7 +17,10 @@ public class UserJoinAction implements Action {
 		user.setUserpw(request.getParameter("userpw"));
 		user.setUsername(request.getParameter("username"));
 		user.setUserphone(request.getParameter("userphone"));
-		user.setUseraddr(request.getParameter("useraddr"));
+		user.setZipcode(request.getParameter("zipcode"));
+		user.setAddr(request.getParameter("addr"));
+		user.setAddrdetail(request.getParameter("addrdetail"));
+		user.setAddretc(request.getParameter("addretc"));
 		
 		UserDAO udao = new UserDAO();
 		

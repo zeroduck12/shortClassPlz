@@ -5,6 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<!-- 제이쿼리 추가했다. -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -31,23 +33,40 @@
     <div class="container-fluid bg-light py-5">
         <div class="col-md-6 m-auto text-center">
             <h1 class="h1">회원가입</h1>
-           <form action="/UserJoin.us" method="post">
+           <form action="/UserJoin.us" method="post" name="joinForm" id="joinForm">
 		<p>
-			아이디 <input type="text" name="userid">
+			아이디 <input type="text" name="userid" id="userid">
+			<input type="button" value="중복확인" onclick="checkId(joinForm.userid.value)">
+			<p id="idCheckText">중복확인 버튼을 클릭하세요</p>
 		</p>
 		<p>
-			패스워드 <input type="password" name="userpw">
+			비밀번호 <input type="password" name="userpw" id="userpw">
 		</p>
 		<p>
-			이름 <input type="text" name="username">
+			비밀번호 확인 <input type="password" name="userpw_re" id="userpw_re">
 		</p>
 		<p>
-			전화번호 <input type="text" name="userphone">
+			이름 <input type="text" name="username" id="username" >
 		</p>
 		<p>
-			주소 <input type="text" name="useraddr">
+			핸드폰 번호 <input type="text" name="userphone" id="userphone">
 		</p>
-	<input type="submit" value="회원가입">
+		<p>
+			<input type="text" id="sample6_postcode" name="zipcode" placeholder="우편번호">
+			<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
+		</p>
+		<p>
+			<input type="text" id="sample6_address" name="addr" placeholder="주소"><br>
+		</p>
+		<p>
+			<input type="text" id="sample6_detailAddress" name="addrdetail" placeholder="상세주소">
+		</p>
+		<p>
+			<input type="text" id="sample6_extraAddress" name="addretc" placeholder="참고항목">	
+		</p>
+		<p>
+			<input type="button" value="가입완료" onclick="sendit()">
+		</p>
 	</form>
         </div>
     </div>
@@ -59,12 +78,17 @@
 	<%@ include file = "footer.jsp" %>
 	<!-- End Footer -->
 
-    <!-- Start Script -->
+    <!-- Start1 Script -->
     <script src="assets/js/jquery-1.11.0.min.js"></script>
     <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/templatemo.js"></script>
     <script src="assets/js/custom.js"></script>
-    <!-- End Script -->
+    <!-- End1 Script -->
+    
+    <!-- Start2 Script -->
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script src="user.js"></script>
+	<!-- End2 Script -->
 </body>
 </html>

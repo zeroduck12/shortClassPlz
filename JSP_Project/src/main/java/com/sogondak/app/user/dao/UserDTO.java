@@ -5,7 +5,10 @@ public class UserDTO {
 	private String userpw;
 	private String username;
 	private String userphone;
-	private String useraddr;
+	private String zipcode;
+	private String addr;
+	private String addrdetail;
+	private String addretc;
 	
 	public String getUserid() {
 		return userid;
@@ -31,11 +34,29 @@ public class UserDTO {
 	public void setUserphone(String userphone) {
 		this.userphone = userphone;
 	}
-	public String getUseraddr() {
-		return useraddr;
+	public String getZipcode() {
+		return zipcode;
 	}
-	public void setUseraddr(String useraddr) {
-		this.useraddr = useraddr;
+	public void setZipcode(String zipcode) {
+		this.zipcode = zipcode;
+	}
+	public String getAddr() {
+		return addr;
+	}
+	public void setAddr(String addr) {
+		this.addr = addr;
+	}
+	public String getAddrdetail() {
+		return addrdetail;
+	}
+	public void setAddrdetail(String addrdetail) {
+		this.addrdetail = addrdetail;
+	}
+	public String getAddretc() {
+		return addretc;
+	}
+	public void setAddretc(String addretc) {
+		this.addretc = addretc;
 	}
 	
 	

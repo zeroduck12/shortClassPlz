@@ -37,7 +37,16 @@ public class UserDAO {
 		return result;
 	}
 	
-	
+	public boolean checkId(String userid) {
+		boolean result = false;
+		
+		int cnt = 0;
+		cnt = sqlsession.selectOne("User.checkId", userid);
+		if( cnt == 1 ) {
+			result = true;
+		}
+		return result;
+	}
 	
 	
 	
