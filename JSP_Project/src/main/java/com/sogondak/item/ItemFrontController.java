@@ -29,10 +29,10 @@ public class ItemFrontController extends HttpServlet {
 
 		ActionForward forward = null;
 		
-		
 		switch (requestURI) {
 		case "/ItemJoin.it" 	: forward = new ItemJoinAction().execute(request, response);		break;
 		case "/ItemList.it" 	: forward = new ItemListAction().execute(request, response);		break;
+		case "/ItemView.it" 	: forward = new ItemViewAction().execute(request, response);		break;
 		}
 		
 		//전송에 대한 일괄처리

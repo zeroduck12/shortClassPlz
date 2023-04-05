@@ -97,16 +97,16 @@
 												class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
 												<ul class="list-unstyled">
 													<li><a class="btn btn-success text-white"
-														href="${pageContext.request.contextPath}/shop/shop-single.jsp"><i class="far fa-heart"></i></a></li>
+														href="/ItemView.it"><i class="far fa-heart"></i></a></li>
 													<li><a class="btn btn-success text-white mt-2"
-														href="${pageContext.request.contextPath}/shop/shop-single.jsp"><i class="far fa-eye"></i></a></li>
+														href="/ItemView.it"><i class="far fa-eye"></i></a></li>
 													<li><a class="btn btn-success text-white mt-2"
-														href="${pageContext.request.contextPath}/shop/shop-single.jsp"><i class="fas fa-cart-plus"></i></a></li>
+														href="/ItemView.it"><i class="fas fa-cart-plus"></i></a></li>
 												</ul>
 											</div>
 										</div>
 										<div class="card-body">
-											<a href="shop-single.jsp" class="h3 text-decoration-none">${item.itemname}</a>
+											<a href="/ItemView.it?itemname=${item.itemname}" class="h3 text-decoration-none">${item.itemname}</a>
 											<ul
 												class="w-100 list-unstyled d-flex justify-content-between mb-0">
 												<li>${item.explain}</li>

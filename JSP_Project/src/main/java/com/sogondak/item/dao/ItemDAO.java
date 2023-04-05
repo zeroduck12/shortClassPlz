@@ -40,6 +40,11 @@ public class ItemDAO {
 		
 		return itemList;
 	}
+
+
+	public ItemBean getItemDetail(String itemname) {
+		return sqlsession.selectOne("Item.getItemDetail", itemname);
+	}
 	
 	
 }
