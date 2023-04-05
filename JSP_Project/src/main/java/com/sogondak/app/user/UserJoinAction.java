@@ -12,6 +12,7 @@ public class UserJoinAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
+	
 		UserDTO user = new UserDTO();
 		user.setUserid(request.getParameter("userid"));
 		user.setUserpw(request.getParameter("userpw"));
@@ -25,7 +26,6 @@ public class UserJoinAction implements Action {
 		UserDAO udao = new UserDAO();
 		
 		ActionForward forward = new ActionForward();
-		
 		
 		if(udao.join(user)) {
 			System.out.println("가입성공");

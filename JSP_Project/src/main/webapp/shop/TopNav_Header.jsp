@@ -51,7 +51,7 @@
                             <a class="nav-link" href="${pageContext.request.contextPath}/shop/about.jsp">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="${pageContext.request.contextPath}/shop/shop.jsp">Shop</a>
+                            <a class="nav-link" href="${pageContext.request.contextPath}/ItemList.it">Shop</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="${pageContext.request.contextPath}/BoardList.bo">Contact</a>

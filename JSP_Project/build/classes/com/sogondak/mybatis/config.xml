@@ -9,6 +9,7 @@
 		<typeAlias type="com.sogondak.app.user.dao.UserDTO" alias="userdto"/>
 		<typeAlias type="com.sogondak.board.dao.BoardBean" alias="boardbean"/>
 		<typeAlias type="com.sogondak.board.dao.ReplyBean" alias="replybean"/>
+		<typeAlias type="com.sogondak.item.dao.ItemBean" alias="itembean"/>
 	</typeAliases>
 
 	<environments default="development">
@@ -25,5 +26,6 @@
 	<mappers>
 		<mapper resource="com/sogondak/sql/user.xml" />
 		<mapper resource="com/sogondak/sql/board.xml" />
+		<mapper resource="com/sogondak/sql/item.xml" />
 	</mappers>
 </configuration>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Item">
+	
+	<insert id="join" parameterType="itembean">
+		INSERT INTO itemlist VALUES (#{itemname},#{price},#{explain},#{spec},#{size1},#{size2},#{size3},itemnumber_seq.nextval)
+	</insert>
+	
+	<select id="getItemCnt" resultType="_int">
+		SELECT COUNT(*)  FROM itemlist
+	</select>
+	
+	<select id="getItemList" parameterType="hashmap" resultType="itembean">
+		SELECT * FROM (
+			SELECT rownum r, A.* FROM 
+				(SELECT * FROM itemlist ORDER BY itemname DESC) A ) B
+		WHERE 	B.r BETWEEN #{startRow} AND #{endRow} 
+	</select>
+</mapper>

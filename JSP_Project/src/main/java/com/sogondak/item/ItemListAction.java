@@ -1,21 +1,21 @@
-package com.sogondak.board;
+package com.sogondak.item;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.sogondak.action.Action;
 import com.sogondak.action.ActionForward;
-import com.sogondak.board.dao.BoardDAO;
+import com.sogondak.item.dao.ItemDAO;
 
-public class BoardListAction implements Action {
+public class ItemListAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
 
 		ActionForward forward = new ActionForward();
-		BoardDAO bdao = new BoardDAO();
+		ItemDAO idao = new ItemDAO();
 		
-		int totalCnt = bdao.getBoardCnt();
+		int totalCnt = idao.getItemCnt();
 
 		// 페이징 처리 시작, 현재 넘겨받은 페이지
 		String temp = request.getParameter("page");
@@ -48,9 +48,9 @@ public class BoardListAction implements Action {
 		request.setAttribute("startPage", startPage);
 		request.setAttribute("endPage", endPage);
 		
-		request.setAttribute("boardList", bdao.getBoardList(startRow, endRow));
+		request.setAttribute("itemList", idao.getItemList(startRow, endRow));
 		forward.setRedirect(false);
-		forward.setPath("/shop/contact.jsp");
+		forward.setPath("/shop/shop.jsp");
 
 		return forward;
 	}

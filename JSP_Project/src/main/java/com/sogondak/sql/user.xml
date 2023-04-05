@@ -16,16 +16,5 @@
 		SELECT count(*) FROM "USER" WHERE USERID = #{userid}
 	</select>
 	
-<!-- 	dbeaver에서 칼럼하나 삭제하고 4개 추가함 추가함
-ALTER TABLE "USER" DROP (useraddr);
-
-ALTER TABLE "USER" add(
-	zipcode		varchar2(100),
-	addr		varchar2(300),
-	addrdetail	varchar2(1000),
-	addretc		varchar2(500)
-);
- -->
-	
 	
 </mapper>
