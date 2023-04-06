@@ -20,8 +20,8 @@ public class UserLoginOkAction implements Action {
 		String userid = request.getParameter("userid");
 		String userpw = request.getParameter("userpw");
 		
-		
 		if(udao.login(userid,userpw)) {
+			udao.loginStatusChangeToLogin(userid);
 			forward.setPath("/shop/index.jsp?loginFlag=true");
 		} else {
 			forward.setPath("/shop/loginOrJoin.jsp?loginFlag=false");

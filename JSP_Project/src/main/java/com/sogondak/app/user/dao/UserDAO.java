@@ -47,6 +47,10 @@ public class UserDAO {
 		}
 		return result;
 	}
+
+	public void loginStatusChangeToLogin(String userid) {
+		sqlsession.update("User.loginStatusChangeToLogin", userid);
+	}
 	
 	
 	

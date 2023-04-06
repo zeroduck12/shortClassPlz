@@ -109,3 +109,20 @@ SELECT  * FROM itemlist;
 
 --DROP TABLE itemlist;
 --TRUNCATE TABLE itemlist;
+
+
+-- 유저 테이블에 로그인에 관련된 상태를 의미하는 숫자를 추가하기 : 1은 로그인된 상태, 0은 비로그인 상태, -1은 회원탈퇴된 상태
+
+ALTER TABLE "USER" add(
+loginstatus		number(10)
+);
+
+SELECT * FROM "USER" u ;
+
+--  장바구니 테이블만들기 : basket
+--CREATE TABLE basket(
+--
+--);
+
+
+

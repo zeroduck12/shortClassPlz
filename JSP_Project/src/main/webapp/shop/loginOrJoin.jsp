@@ -5,6 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>소곤닥 - 회원가입 or 로그인</title>
+<!-- 제이쿼리 추가했다. -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
@@ -34,7 +37,7 @@
             <h1 class="h1">로그인</h1>
             <p>
             <!-- start 로그인 부분 -->
-				<form action="/UserLoginOk.us" method="post">
+				<form action="/UserLoginOk.us" method="post" name="loginForm" id="loginForm">
 					<p>
 						아이디 <input type="text" name="userid">
 					</p>
@@ -45,8 +48,12 @@
 			</form>
 			<!-- End 로그인 부분 -->
 			<br><br>
+<!-- 			<input type="button" value="로그아웃" href="javascript:loginStatusChangeToLogout()"> -->
         	<!-- start 회원가입 부분 -->
-				<a href="joinview.jsp">회원가입</a>
+				<a href="joinview.jsp">회원가입</a><br>
+				<a href="joinview.jsp">회원탈퇴</a>
+			<!-- 	여기말고 다른데다가 놓아야할듯 -->
+				
 			<!-- End 회원가입 부분 -->
 		</div>
     </div>
@@ -65,6 +72,10 @@
     <script src="assets/js/templatemo.js"></script>
     <script src="assets/js/custom.js"></script>
     <!-- End Script -->
+    
+    <script type="text/javascript">
+    	
+
 	
 </body>
 </html>

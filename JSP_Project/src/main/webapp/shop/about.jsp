@@ -59,7 +59,7 @@
                     - 위와 같은 사항 및 단순변심 인한 반품 및 교환은 불가합니다.<br>
                     <br>
                     4. 문의 연락<br>
-                    - 인스타그램 DM (@sogondak)<br>
+                    - 인스타그램 : <a href="https://instagram.com/sogondak?igshid=YmMyMTA2M2Y=" target="_blank">sogondak</a><br>
                     </p>
                 </div>
             </div>

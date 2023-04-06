@@ -38,7 +38,7 @@
                 <div class="container">
                     <div class="row p-5">
                         <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                            <img class="img-fluid" src="./assets/웹사이트 img/3월 마켓 이벤틑.jpg" alt="">
+                            <img class="img-fluid" src="./assets/웹사이트 img/3월 마켓 이벤트.jpg" alt="">
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left align-self-center">
@@ -122,14 +122,14 @@
         <!-- 동그란 이미지 -->
         <div class="row">
             <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="#"><img src="./assets/웹사이트 img/뜨개질 씰스티커.jpg" class="rounded-circle img-fluid border"></a>
+                <a href="${pageContext.request.contextPath}/ItemList.it"><img src="./assets/웹사이트 img/뜨개질 씰스티커.jpg" class="rounded-circle img-fluid border"></a>
                 <h2 class="h5 text-center mt-3 mb-3">스티커</h2>
-                <p class="text-center"><a class="btn btn-success">보러 가기</a></p>
+                <p class="text-center"><a class="btn btn-success" href="${pageContext.request.contextPath}/ItemList.it">보러 가기</a></p>
             </div>
             <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="#"><img src="./assets/웹사이트 img/모조지 세트 (총 10매).jpg" class="rounded-circle img-fluid border"></a>
+                <a href="${pageContext.request.contextPath}/ItemList.it"><img src="./assets/웹사이트 img/모조지 세트 (총 10매).jpg" class="rounded-circle img-fluid border"></a>
                 <h2 class="h5 text-center mt-3 mb-3">메모지</h2>
-                <p class="text-center"><a class="btn btn-success">보러 가기</a></p>
+                <p class="text-center"><a class="btn btn-success" href="${pageContext.request.contextPath}/ItemList.it">보러 가기</a></p>
             </div>
         </div>
     </section>

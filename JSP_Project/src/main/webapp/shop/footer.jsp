@@ -16,15 +16,15 @@
                     <ul class="list-unstyled text-light footer-link-list">
                         <li>
                             <i class="fas fa-map-marker-alt fa-fw"></i>
-                            주소입력하세요
+                            대구 광역시 어딘가의 본가에서 택배받음
                         </li>
                         <li>
                             <i class="fa fa-phone fa-fw"></i>
-                            <a class="text-decoration-none" href="tel:010-020-0340">전화번호입력하세요</a>
+                            <a class="text-decoration-none" href="tel:010-2643-2428">010-2643-2428</a>
                         </li>
                         <li>
                             <i class="fa fa-envelope fa-fw"></i>
-                            <a class="text-decoration-none" href="mailto:info@company.com">이메일입력하세요</a>
+                            <a class="text-decoration-none">sogondak_@naver.com</a>
                         </li>
                     </ul>
                 </div>
@@ -32,19 +32,17 @@
                 <div class="col-md-4 pt-5">
                     <h2 class="h2 text-light border-bottom pb-3 border-light">상품</h2>
                     <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="#">씰스티커</a></li>
-                        <li><a class="text-decoration-none" href="#">메모지</a></li>
+                        <li><a class="text-decoration-none" href="${pageContext.request.contextPath}/ItemList.it">씰스티커</a></li>
+                        <li><a class="text-decoration-none" href="${pageContext.request.contextPath}/ItemList.it">메모지</a></li>
                     </ul>
                 </div>
 
                 <div class="col-md-4 pt-5">
                     <h2 class="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
                     <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="#">Home</a></li>
-                        <li><a class="text-decoration-none" href="#">About Us</a></li>
-                        <li><a class="text-decoration-none" href="#">Shop Locations</a></li>
-                        <li><a class="text-decoration-none" href="#">FAQs</a></li>
-                        <li><a class="text-decoration-none" href="#">Contact</a></li>
+                        <li><a class="text-decoration-none" href="${pageContext.request.contextPath}/shop/index.jsp">Home</a></li>
+                        <li><a class="text-decoration-none" href="${pageContext.request.contextPath}/shop/about.jsp">About Us</a></li>
+                        <li><a class="text-decoration-none" href="${pageContext.request.contextPath}/BoardList.bo">Contact</a></li>
                     </ul>
                 </div>
 
@@ -85,7 +83,7 @@
                 <div class="row pt-2">
                     <div class="col-12">
                         <p class="text-left text-light">
-                            Copyright &copy; 2022 twenty
+                            Copyright &copy; 2023 twenty
 	                        | Designed by sogondak
                         </p>
                     </div>

@@ -49,7 +49,7 @@
     <!-- Start Content Page -->
     <div class="container-fluid bg-light py-5">
         <div class="col-md-6 m-auto text-center">
-            <h1 class="h1">LOGIN</h1>
+            <h1 class="h1">게시판</h1>
             <p>
                 항상 저희 소곤닥을 찾아주셔서 감사합니다.<br>
                 문의글을 남겨 주시면 성심성의껏 답변드리겠습니다.
@@ -68,11 +68,8 @@
 	<c:set var="endPage" value="${requestScope.endPage }"/>
 	<div>
       <table style="width:900px;border:0px;">
-         <tr align="center" valign="middle">
-            <td><h3>Contact List</h3></td>
-         </tr>
          <tr align="right" valign="middle">
-				<td>글 개수 ${totalCnt } 개</td>
+				<td>총 글 개수 ${totalCnt } 개</td>
          </tr>
       </table>
       <table border="1" style="border-collapse:collapse; border-spacing:0; width:900px;">

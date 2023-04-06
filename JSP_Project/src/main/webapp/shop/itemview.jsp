@@ -52,20 +52,20 @@
                     <div class="card">
                         <div class="card-body">
                             <h1 class="h2">${item.itemname}</h1>
-                            <p class="h3 py-2">${item.price}</p>
+                            <p class="h3 py-2">판매가 : ${item.price}</p>
                         
                             <p>
 								${item.explain}
 							</p>
                            
 
-                            <h6>규격</h6>
+                            <h4>규격</h4>
                             <ul class="list-unstyled pb-3">
                                 <li>
                                 ${item.spec}
                                 <br>
-                                ${item.size1}
-                                ${item.size2}
+                                ${item.size1}<br>
+                                ${item.size2}<br>
                                 ${item.size3}
                                   </li>
                             </ul>

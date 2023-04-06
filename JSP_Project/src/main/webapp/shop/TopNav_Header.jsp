@@ -13,9 +13,9 @@
             <div class="w-100 d-flex justify-content-between">
                 <div>
                     <i class="fa fa-envelope mx-2"></i>
-                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:info@company.com">info@company.com</a>
+                    <a class="navbar-sm-brand text-light text-decoration-none">sogondak@company.com</a>
                     <i class="fa fa-phone mx-2"></i>
-                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:010-020-0340">010-020-0340</a>
+                    <a class="navbar-sm-brand text-light text-decoration-none">010-2643-2428</a>
                 </div>
                 <div>
                     <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
@@ -67,16 +67,16 @@
                             </div>
                         </div>
                     </div>
-                    <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
-                        <i class="fa fa-fw fa-search text-dark mr-2"></i>
-                    </a>
+<!--                     <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search"> -->
+<!--                         <i class="fa fa-fw fa-search text-dark mr-2"></i> -->
+<!--                     </a> -->
                     <a class="nav-icon position-relative text-decoration-none" href="#">
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                        <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">!!여기에 상품담은것 갯수</span>
+                        <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">장바구니</span>
                     </a>
                     <a class="nav-icon position-relative text-decoration-none" href="${pageContext.request.contextPath}/shop/loginOrJoin.jsp">
                         <i class="fa fa-fw fa-user text-dark mr-3"></i>
-                        <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">!!로그인 혹은 로그아웃 변수로잡기</span>
+                        <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">로그인</span>
                     </a>
                 </div>
             </div>

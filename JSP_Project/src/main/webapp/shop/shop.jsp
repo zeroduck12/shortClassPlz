@@ -51,9 +51,11 @@
 					<li class="pb-3"><a
 						class="collapsed d-flex justify-content-between h3 text-decoration-none"
 						href="#"> 메모지 </a></li>
+					<hr>
 					<li class="pb-3"><a
 						class="collapsed d-flex justify-content-between h3 text-decoration-none"
-						href="${pageContext.request.contextPath}/shop/itemjoin.jsp"> 관리자를 위한 상품 추가 </a></li>
+						href="${pageContext.request.contextPath}/shop/itemjoin.jsp">
+							관리자를 위한 상품 추가 </a></li>
 				</ul>
 			</div>
 
@@ -66,19 +68,11 @@
 			<c:set var="startPage" value="${requestScope.startPage }" />
 			<c:set var="endPage" value="${requestScope.endPage }" />
 
-			<table style="width: 100%; border: 0px;">
-				<tr align="center" valign="middle">
-					<td><h3>상품 리스트</h3></td>
-				</tr>
-				<tr align="right" valign="middle">
-					<td>글 개수 ${totalCnt } 개</td>
-				</tr>
-			</table>
-
 
 			<div class="col-lg-9">
 				<div class="row">
-
+					<p><h2>상품 리스트</h2></p>
+					<p align="right">상품 총 개수 ${totalCnt } 개</p>
 
 					<c:choose>
 						<c:when test="${itemList != null and fn:length(itemList)>0}">
@@ -106,75 +100,75 @@
 											</div>
 										</div>
 										<div class="card-body">
-											<a href="/ItemView.it?itemname=${item.itemname}" class="h3 text-decoration-none">${item.itemname}</a>
-											<ul
-												class="w-100 list-unstyled d-flex justify-content-between mb-0">
-												<li>${item.explain}</li>
-											</ul>
-											<ul class="list-unstyled d-flex justify-content-center mb-1">
-												<li><i class="text-warning fa fa-star"></i> <i
-													class="text-warning fa fa-star"></i> <i
-													class="text-warning fa fa-star"></i> <i
-													class="text-warning fa fa-star"></i> <i
-													class="text-warning fa fa-star"></i></li>
-											</ul>
-											<p class="text-center mb-0">${item.price}</p>
+<!-- 											<ul -->
+<!-- 												class="w-100 list-unstyled d-flex justify-content-between mb-0"> -->
+<!-- 												<li> -->
+<!-- 												shop페이지에서 여기에 상품 설명 추가가능 -->
+<!-- 												</li> -->
+<!-- 											</ul> -->
+<!-- 											<ul class="list-unstyled d-flex justify-content-center mb-1"> -->
+<!-- 												<li><i class="text-warning fa fa-star"></i> <i -->
+<!-- 													class="text-warning fa fa-star"></i> <i -->
+<!-- 													class="text-warning fa fa-star"></i> <i -->
+<!-- 													class="text-warning fa fa-star"></i> <i -->
+<!-- 													class="text-warning fa fa-star"></i></li> -->
+<!-- 											</ul> -->
+											<p class="text-center mb-0">
+												<a href="/ItemView.it?itemname=${item.itemname}" class="text-decoration-none text-center mb-0">
+													${item.itemname}
+												</a><br>
+													${item.price}
+											</p>
 										</div>
 									</div>
 								</div>
-
-
 							</c:forEach>
 						</c:when>
 						<c:otherwise>
-							<%-- 게시글이 없는 경우 --%>
+							<%-- 상품이 없는 경우 --%>
 							<tr style="height: 50px;">
 								<td colspan="5" style="text-align: center;">등록된 상품이 없습니다.</td>
 							</tr>
 						</c:otherwise>
-
 					</c:choose>
 					<!-- End 개별 상품1 -->
-
+			</div>
 
 					<!--   Start    페이징처리하기 -->
 					<table style="border: 0px; width: 900px">
 						<tr align="center" valign="middle">
 							<td><c:if test="${nowPage > 1 }">
-									<a
-										href="${pageContext.request.contextPath}/ItemList.it?page=${nowPage-1}">[&lt;]</a>
+									<a href="${pageContext.request.contextPath}/ItemList.it?page=${nowPage-1}">[&lt;]</a>
 								</c:if> <c:forEach var="i" begin="${startPage }" end="${ endPage}">
 									<c:choose>
 										<c:when test="${i==nowPage }">
 									[${i }]
 								</c:when>
 										<c:otherwise>
-											<a
-												href="${pageContext.request.contextPath}/ItemList.it?page=${i}">[${i }]</a>
+											<a href="${pageContext.request.contextPath}/ItemList.it?page=${i}">[${i }]</a>
 										</c:otherwise>
 									</c:choose>
 								</c:forEach> <c:if test="${nowPage < totalPage}">
-									<a
-										href="${pageContext.request.contextPath}/ItemList.it?page=${nowPage+1}">[&gt;]</a>
+									<a href="${pageContext.request.contextPath}/ItemList.it?page=${nowPage+1}">[&gt;]</a>
 								</c:if></td>
 						</tr>
 					</table>
 					<!--  End     페이징처리하기 -->
+					
 
-				</div>
-				<div div="row">
-					<ul class="pagination pagination-lg justify-content-end">
-						<li class="page-item disabled"><a
-							class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0"
-							href="#" tabindex="-1">1</a></li>
-						<li class="page-item"><a
-							class="page-link rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-dark"
-							href="#">2</a></li>
-						<li class="page-item"><a
-							class="page-link rounded-0 shadow-sm border-top-0 border-left-0 text-dark"
-							href="#">3</a></li>
-					</ul>
-				</div>
+<!-- 				<div div="row"> -->
+<!-- 					<ul class="pagination pagination-lg justify-content-end"> -->
+<!-- 						<li class="page-item disabled"> -->
+<!-- 							<a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" -->
+<!-- 								href="#" tabindex="-1">1</a></li> -->
+<!-- 						<li class="page-item"> -->
+<!-- 							<a class="page-link rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-dark" -->
+<!-- 								href="#">2</a></li> -->
+<!-- 						<li class="page-item"> -->
+<!-- 							<a class="page-link rounded-0 shadow-sm border-top-0 border-left-0 text-dark" -->
+<!-- 								href="#">3</a></li> -->
+<!-- 					</ul> -->
+<!-- 				</div> -->
 			</div>
 		</div>
 	</div>
