@@ -33,6 +33,7 @@ public class UserFrontController extends HttpServlet {
 		switch (requestURI) {
 		case "/UserJoin.us" 	: forward = new UserJoinAction().execute(request, response);		break;
 		case "/UserLoginOk.us"	: forward = new UserLoginOkAction().execute(request, response); 	break;
+		case "/UserLogOut.us"	: forward = new UserLogOutAction().execute(request, response); 	break;
 		
 		}
 		

@@ -20,4 +20,9 @@
 		update "USER" set loginstatus = 1 WHERE userid = #{userid}
 	</update>
 	
+	<select id="userIsLigon" parameterType="string" resultType="userdto">
+		SELECT * FROM "USER" WHERE userid = #{userid}
+	</select>
+	
+	
 </mapper>

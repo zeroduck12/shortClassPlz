@@ -51,6 +51,10 @@ public class UserDAO {
 	public void loginStatusChangeToLogin(String userid) {
 		sqlsession.update("User.loginStatusChangeToLogin", userid);
 	}
+
+	public UserDTO userIsLogin(String userid) {
+		return sqlsession.selectOne("User.userIsLigon", userid);
+	}
 	
 	
 	

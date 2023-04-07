@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -74,10 +76,27 @@
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
                         <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">장바구니</span>
                     </a>
-                    <a class="nav-icon position-relative text-decoration-none" href="${pageContext.request.contextPath}/shop/loginOrJoin.jsp">
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        
+                        
+	        <!--start 로그인 안 된 상태 -->
+			<c:if test="${empty userIsLogin}">
+			    <a class="nav-icon position-relative text-decoration-none" href="${pageContext.request.contextPath}/shop/loginOrJoin.jsp">
                         <i class="fa fa-fw fa-user text-dark mr-3"></i>
                         <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">로그인</span>
-                    </a>
+                </a>
+			</c:if>
+			<!--End 로그인 안 된 상태 -->
+			<!--Start 로그인 된 상태 -->
+			<c:if test="${not empty use	}">
+			    <a class="nav-icon position-relative text-decoration-none" href="${pageContext.request.contextPath}/UserLogOut.us">
+                        <i class="fa fa-fw fa-user text-dark mr-3"></i>
+                        <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">로그아웃</span>
+                </a>
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                   ${userIsLogin.username}님 환영합니다
+			</c:if>
+			<!--End 로그인 된 상태 -->
                 </div>
             </div>
 

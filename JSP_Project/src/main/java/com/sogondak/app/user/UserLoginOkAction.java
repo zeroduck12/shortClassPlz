@@ -22,6 +22,11 @@ public class UserLoginOkAction implements Action {
 		
 		if(udao.login(userid,userpw)) {
 			udao.loginStatusChangeToLogin(userid);
+			
+			request.getSession().setAttribute("userIsLogin", udao.userIsLogin(userid));
+			request.getSession().setMaxInactiveInterval(60*30);
+			
+			
 			forward.setPath("/shop/index.jsp?loginFlag=true");
 		} else {
 			forward.setPath("/shop/loginOrJoin.jsp?loginFlag=false");
