@@ -10,6 +10,7 @@ public class UserDTO {
 	private String addrdetail;
 	private String addretc;
 	private int loginstatus;
+	private int userIDNumber;
 	
 	public String getUserid() {
 		return userid;
@@ -64,6 +65,12 @@ public class UserDTO {
 	}
 	public void setLoginstatus(int loginstatus) {
 		this.loginstatus = loginstatus;
+	}
+	public int getUserIDNumber() {
+		return userIDNumber;
+	}
+	public void setUserIDNumber(int userIDNumber) {
+		this.userIDNumber = userIDNumber;
 	}
 	
 	

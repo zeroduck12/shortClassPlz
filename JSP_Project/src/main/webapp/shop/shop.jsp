@@ -84,22 +84,40 @@
 								<div class="col-md-4">
 									<div class="card mb-4 product-wap rounded-0">
 										<div class="card rounded-0">
-											<!--                             여기 아래에 이미지 넣을 것인데 아이템 이미지 번호에맞춰서 가져오자. -->
+											<!-- 여기 아래에 이미지 넣을 것인데 아이템 이미지 번호에맞춰서 가져오자. -->
 											<img class="card-img rounded-0 img-fluid"
 												src="${pageContext.request.contextPath}/shop/assets/웹사이트 img/${item.itemname}.jpg">
 											<div
 												class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
 												<ul class="list-unstyled">
-													<li><a class="btn btn-success text-white"
-														href="/ItemView.it"><i class="far fa-heart"></i></a></li>
-													<li><a class="btn btn-success text-white mt-2"
-														href="/ItemView.it"><i class="far fa-eye"></i></a></li>
-													<li><a class="btn btn-success text-white mt-2"
-														href="/ItemView.it"><i class="fas fa-cart-plus"></i></a></li>
+<!-- 													<li><a class="btn btn-success text-white" href="/ItemView.it"><i class="far fa-heart"></i></a></li> -->
+													<li><a class="btn btn-success text-white mt-2" href="/ItemView.it?itemname=${item.itemname}"><i class="far fa-eye"></i></a></li>
+													
+														<c:if test="${empty userIsLogin}">
+															<li><a class="btn btn-success text-white mt-2" href="javascript:loginPlz()"><i class="fas fa-cart-plus"></i></a></li>
+														</c:if>
+														<c:if test="${not empty userIsLogin}">
+															<li><a class="btn btn-success text-white mt-2" href="/BasketAdd.bs?itemname=${item.itemname}&userIDNumber=${userIsLogin.userIDNumber}&price=${item.price}"><i class="fas fa-cart-plus"></i></a></li>
+														</c:if> 
+													
 												</ul>
 											</div>
 										</div>
 										<div class="card-body">
+										
+<!-- 	로그인상태 테스트 -->
+<!-- 		<div> -->
+<%-- 		<c:if test="${empty userIsLogin}"> --%>
+<!-- 		<p>로그인 하지 않은 상태</p> -->
+<!-- 		<a href="login">로그인 하러 가기</a> -->
+<%-- 		</c:if> --%>
+<%-- 		<c:if test="${not empty userIsLogin}"> --%>
+<!-- 		<p>로그인 한 상태</p> -->
+<%-- 		<p>${userIsLogin.username}님 환영합니다</p> --%>
+<!-- 		<a href="logout">로그아웃</a> -->
+<%-- 		</c:if> --%>
+<!-- 		</div> -->
+<!-- 	로그인상태 테스트 -->
 <!-- 											<ul -->
 <!-- 												class="w-100 list-unstyled d-flex justify-content-between mb-0"> -->
 <!-- 												<li> -->
@@ -117,7 +135,7 @@
 												<a href="/ItemView.it?itemname=${item.itemname}" class="text-decoration-none text-center mb-0">
 													${item.itemname}
 												</a><br>
-													${item.price}
+													${item.price} 원
 											</p>
 										</div>
 									</div>
@@ -178,12 +196,5 @@
 	<%@ include file="footer.jsp"%>
 	<!-- End Footer -->
 
-	<!-- Start Script -->
-	<script src="assets/js/jquery-1.11.0.min.js"></script>
-	<script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
-	<script src="assets/js/bootstrap.bundle.min.js"></script>
-	<script src="assets/js/templatemo.js"></script>
-	<script src="assets/js/custom.js"></script>
-	<!-- End Script -->
 </body>
 </html>

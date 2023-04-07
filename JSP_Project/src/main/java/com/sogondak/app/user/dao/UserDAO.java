@@ -53,7 +53,7 @@ public class UserDAO {
 	}
 
 	public UserDTO userIsLogin(String userid) {
-		return sqlsession.selectOne("User.userIsLigon", userid);
+		return sqlsession.selectOne("User.userIsLogin", userid);
 	}
 	
 	

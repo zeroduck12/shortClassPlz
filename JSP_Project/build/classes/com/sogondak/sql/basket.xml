@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Basket">
+	
+	<select id="getBasketCnt" parameterType="_int" resultType="_int">
+		SELECT COUNT(*)  FROM basket where userIDNumber=#{userIDNumber}
+	</select>
+	
+	<select id="getBasketList" parameterType="hashmap" resultType="basketbean">
+		SELECT * FROM (
+			SELECT rownum r, A.* FROM 
+				(SELECT * FROM basket where userIDNumber=#{userIDNumber} ORDER BY userIDNumber DESC) A ) B
+		WHERE 	B.r BETWEEN #{startRow} AND #{endRow} 
+	</select>
+	
+	<insert id="basketAdd" parameterType="basketbean">
+		INSERT INTO basket values(#{userIDNumber}, #{itemname}, #{price}, #{howmany})
+	</insert>
+	
+	<select id="alreadyHaveItem" parameterType="hashmap" resultType="_int">
+		SELECT count(*) FROM basket WHERE userIDNumber = #{userIDNumber} AND itemname = #{itemname}
+	</select>
+	
+	
+</mapper>

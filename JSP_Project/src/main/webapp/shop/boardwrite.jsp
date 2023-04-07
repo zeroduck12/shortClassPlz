@@ -67,8 +67,8 @@
         </table>
 	</form>
 	 
-	
-	<!-- Footer -->
+	<!-- Start Footer -->
 	<%@ include file = "footer.jsp" %>
+	<!-- End Footer -->
 </body>
 </html>

@@ -49,17 +49,16 @@
     <!-- Start Content Page -->
     <div class="container-fluid bg-light py-5">
         <div class="col-md-6 m-auto text-center">
-            <h1 class="h1">게시판</h1>
+            <h1 class="h1">장바구니</h1>
             <p>
-                항상 저희 소곤닥을 찾아주셔서 감사합니다.<br>
-                문의글을 남겨 주시면 성심성의껏 답변드리겠습니다.
+                장바구니 입니다
             </p>
         </div>
     </div>
     <!-- End Content Page -->
 	
-    <!-- Start board -->
-    <c:set var="boardList" value="${requestScope.boardList }"/>
+    <!-- Start basket -->
+    <c:set var="basketList" value="${requestScope.basketList }"/>
 	<c:set var="totalCnt" value="${requestScope.totalCnt }"/>
 
 	<c:set var="totalPage" value="${requestScope.totalPage }"/>
@@ -69,42 +68,42 @@
 	<div>
       <table style="width:900px;border:0px;">
          <tr align="right" valign="middle">
-				<td>총 글 개수 ${totalCnt } 개</td>
+				<td>총 담은 상품 개수 ${totalCnt } 개</td>
          </tr>
       </table>
       <table border="1" style="border-collapse:collapse; border-spacing:0; width:900px;">
          <tr align="center" valign="middle">
-            <th width="8%">번호</th>
-            <th width="50%">제목</th>
-            <th width="15%">작성자</th>
-            <th width="17%">날짜</th>
-            <th width="10%">조회수</th>
+            <th width="8%">userIDNumber</th>
+            <th width="50%">상품 이름</th>
+            <th width="15%">개별 가격</th>
+            <th width="17%">수량</th>
+            <th width="10%">소계</th>
          </tr>
          <c:choose>
-         	<c:when test="${boardList != null and fn:length(boardList)>0}">
+         	<c:when test="${basketList != null and fn:length(basketList)>0}">
 
-			     	<c:forEach var="board" items="${boardList }" >
+			     	<c:forEach var="basket" items="${basketList }" >
 				     	<tr align="center" valign="middle"
 				        onmouseover="this.style.background='#bbdefb'" onmouseout="this.style.background=''">
 		
-			               <td height="23px">${board.boardnum }
+			               <td height="23px">${basket.userIDNumber }
 			               </td>
-			               <td height="23px"><a href="${pageContext.request.contextPath}/BoardView.bo?boardnum=${board.boardnum }">${board.boardtitle }</a>
+			               <td height="23px"><a href="${pageContext.request.contextPath}/ItemView.it?itemname=${basket.itemname }">${basket.itemname }</a>
 			               </td>
-			               <td height="23px">${board.username }
+			               <td height="23px">${basket.price } 원
 			               </td>
-			               <td height="23px">${board.boarddate }
+			               <td height="23px">${basket.howmany } 개
 			               </td>
-			               <td height="23px">${board.boardreadcount}
+			               <td height="23px">${basket.price  * basket.howmany } 원
 			               </td>
 			        </tr>
 		        </c:forEach>
 		         
 	        </c:when>
 	        	<c:otherwise>
-		            <%-- 게시글이 없는 경우 --%>
+		            <%-- 담은 상품이 없는 경우 --%>
 		            <tr style="height:50px;">
-		               <td colspan="5" style="text-align:center;">등록된 게시물이 없습니다.</td>
+		               <td colspan="5" style="text-align:center;">담은 상품이 없습니다.</td>
 		            </tr>
            		</c:otherwise>
            </c:choose>
@@ -113,35 +112,28 @@
       <table style="border:0px;width:900px">
          <tr align="center" valign="middle">
             <td>
-         		<c:if test="${nowPage > 1 }"><a href="${pageContext.request.contextPath}/BoardList.bo?page=${nowPage-1}">[&lt;]</a></c:if>
+         		<c:if test="${nowPage > 1 }"><a href="${pageContext.request.contextPath}/BasketView.bs?page=${nowPage-1}&userIDNumber=${userIsLogin.userIDNumber}">[&lt;]</a></c:if>
 					<c:forEach var="i" begin="${startPage }" end="${ endPage}">
 						<c:choose>
 								<c:when test="${i==nowPage }">
 									[${i }]
 								</c:when>
 								<c:otherwise>
-									<a href="${pageContext.request.contextPath}/BoardList.bo?page=${i}">[${i }]</a>
+									<a href="${pageContext.request.contextPath}/BasketView.bs?page=${i}&userIDNumber=${userIsLogin.userIDNumber}">[${i }]</a>
 								</c:otherwise>
 						</c:choose>
 					</c:forEach>
-				 <c:if test="${nowPage < totalPage}"><a href="${pageContext.request.contextPath}/BoardList.bo?page=${nowPage+1}">[&gt;]</a></c:if>
-            </td>
-         </tr>
-      </table> 
-      
-      <table style="border:0px;width:900px">
-         <tr align="center" valign="middle">
-            <td>
-               <a href="${pageContext.request.contextPath}/BoardWrite.bo">[글쓰기]</a>
+				 <c:if test="${nowPage < totalPage}"><a href="${pageContext.request.contextPath}/BasketView.bs?page=${nowPage+1}&userIDNumber=${userIsLogin.userIDNumber}">[&gt;]</a></c:if>
             </td>
          </tr>
       </table> 
    </div>
-    <!-- End board -->
+    <!-- End basket -->
 
 	
 	<!-- Footer -->
 	<%@ include file = "footer.jsp" %>
 	<!-- End Footer -->
+	
 </body>
 </html>

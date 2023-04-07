@@ -78,17 +78,10 @@
 	<%@ include file = "footer.jsp" %>
 	<!-- End Footer -->
 
-    <!-- Start1 Script -->
-    <script src="assets/js/jquery-1.11.0.min.js"></script>
-    <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/templatemo.js"></script>
-    <script src="assets/js/custom.js"></script>
-    <!-- End1 Script -->
     
-    <!-- Start2 Script -->
+    <!-- start additional Script -->
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script src="user.js"></script>
-	<!-- End2 Script -->
+	<!-- end Script -->
 </body>
 </html>

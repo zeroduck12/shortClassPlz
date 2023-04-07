@@ -10,6 +10,7 @@
 		<typeAlias type="com.sogondak.board.dao.BoardBean" alias="boardbean"/>
 		<typeAlias type="com.sogondak.board.dao.ReplyBean" alias="replybean"/>
 		<typeAlias type="com.sogondak.item.dao.ItemBean" alias="itembean"/>
+		<typeAlias type="com.sogondak.basket.dao.BasketBean" alias="basketbean"/>
 	</typeAliases>
 
 	<environments default="development">
@@ -27,5 +28,6 @@
 		<mapper resource="com/sogondak/sql/user.xml" />
 		<mapper resource="com/sogondak/sql/board.xml" />
 		<mapper resource="com/sogondak/sql/item.xml" />
+		<mapper resource="com/sogondak/sql/basket.xml" />
 	</mappers>
 </configuration>

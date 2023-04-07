@@ -72,10 +72,22 @@
 <!--                     <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search"> -->
 <!--                         <i class="fa fa-fw fa-search text-dark mr-2"></i> -->
 <!--                     </a> -->
-                    <a class="nav-icon position-relative text-decoration-none" href="#">
+                    <!--start 로그인 안 된 상태 -->
+                    <c:if test="${empty userIsLogin}">
+                    <a class="nav-icon position-relative text-decoration-none" href="javascript:loginPlz()">
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
                         <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">장바구니</span>
                     </a>
+                    </c:if>
+                    <!--End 로그인 안 된 상태 -->
+					<!--Start 로그인 된 상태 -->
+					<c:if test="${not empty userIsLogin}">
+                    <a class="nav-icon position-relative text-decoration-none" href="${pageContext.request.contextPath}/BasketView.bs?userIDNumber=${userIsLogin.userIDNumber}">
+                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+                        <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">장바구니</span>
+                    </a>
+                    <!--End 로그인 된 상태 -->
+          		    </c:if>      
                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         
                         
