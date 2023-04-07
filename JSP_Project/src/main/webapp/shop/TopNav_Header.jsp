@@ -88,7 +88,7 @@
 			</c:if>
 			<!--End 로그인 안 된 상태 -->
 			<!--Start 로그인 된 상태 -->
-			<c:if test="${not empty use	}">
+			<c:if test="${not empty userIsLogin}">
 			    <a class="nav-icon position-relative text-decoration-none" href="${pageContext.request.contextPath}/UserLogOut.us">
                         <i class="fa fa-fw fa-user text-dark mr-3"></i>
                         <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">로그아웃</span>
