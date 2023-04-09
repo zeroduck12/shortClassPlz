@@ -76,29 +76,35 @@
             <th width="8%">userIDNumber</th>
             <th width="50%">상품 이름</th>
             <th width="15%">개별 가격</th>
-            <th width="17%">수량</th>
-            <th width="10%">소계</th>
+            <th width="5%"></th>
+            <th width="4%">수량</th>
+            <th width="5%"></th>
+            <th width="13%">소계</th>
          </tr>
          <c:choose>
          	<c:when test="${basketList != null and fn:length(basketList)>0}">
-
 			     	<c:forEach var="basket" items="${basketList }" >
 				     	<tr align="center" valign="middle"
 				        onmouseover="this.style.background='#bbdefb'" onmouseout="this.style.background=''">
-		
-			               <td height="23px">${basket.userIDNumber }
-			               </td>
-			               <td height="23px"><a href="${pageContext.request.contextPath}/ItemView.it?itemname=${basket.itemname }">${basket.itemname }</a>
-			               </td>
-			               <td height="23px">${basket.price } 원
-			               </td>
-			               <td height="23px">${basket.howmany } 개
-			               </td>
-			               <td height="23px">${basket.price  * basket.howmany } 원
-			               </td>
-			        </tr>
-		        </c:forEach>
-		         
+							<td height="23px">${basket.userIDNumber }
+							</td>
+							<td height="23px"><a href="${pageContext.request.contextPath}/ItemView.it?itemname=${basket.itemname }">${basket.itemname }</a>
+							</td>
+							<td height="23px">${basket.price } 원
+							</td>
+							<td height="23px"><a class="btn btn-success list-inline-item" href="${pageContext.request.contextPath}/BasketItemCntMinus.bs?userIDNumber=${userIsLogin.userIDNumber}&itemname=${basket.itemname }">-</a>
+							</td>
+							<td height="23px">${basket.howmany } 개</td>
+							<td height="23px"><a class="btn btn-success list-inline-item" href="${pageContext.request.contextPath}/BasketItemCntPlus.bs?userIDNumber=${userIsLogin.userIDNumber}&itemname=${basket.itemname }">+</a>
+							</td>
+							<td height="23px">${basket.price  * basket.howmany } 원 
+							</td>
+				        </tr>
+			        </c:forEach>
+			        <tr align="center" valign="middle">
+		        	<td colspan=6>합계</td>
+		        	<td> 여기에다가 총합계 가격</td>
+		        	</tr>
 	        </c:when>
 	        	<c:otherwise>
 		            <%-- 담은 상품이 없는 경우 --%>

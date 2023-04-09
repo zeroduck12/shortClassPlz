@@ -56,6 +56,38 @@ public class BasketDAO {
 		
 		return result;
 	}
+
+	public boolean BasketItemCntMinus(BasketBean basket) {
+
+		boolean result = false;
+		
+		HashMap<Object, Object> datas = new HashMap<>();
+		
+		datas.put("userIDNumber", basket.getUserIDNumber());
+		datas.put("itemname", basket.getItemname());
+		
+		if(sqlSession.update("Basket.BasketItemCntMinus",datas)>=1) {
+			result = true;
+		}
+		
+		return result;
+	}
+
+	public boolean BasketItemCntPlus(BasketBean basket) {
+
+		boolean result = false;
+		
+		HashMap<Object, Object> datas = new HashMap<>();
+		
+		datas.put("userIDNumber", basket.getUserIDNumber());
+		datas.put("itemname", basket.getItemname());
+		
+		if(sqlSession.update("Basket.BasketItemCntPlus",datas)>=1) {
+			result = true;
+		}
+		
+		return result;
+	}
 	
 	
 }

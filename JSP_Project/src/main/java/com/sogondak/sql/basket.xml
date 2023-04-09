@@ -24,4 +24,14 @@
 	</select>
 	
 	
+	<update id="BasketItemCntMinus" parameterType="hashmap">
+		update basket set howmany = howmany-1 WHERE userIDNumber = #{userIDNumber} AND itemname = #{itemname}
+	</update>
+
+	<update id="BasketItemCntPlus" parameterType="hashmap">
+		update basket set howmany = howmany+1 WHERE userIDNumber = #{userIDNumber} AND itemname = #{itemname}
+	</update>
+	
+	
+	
 </mapper>

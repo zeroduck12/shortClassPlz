@@ -33,7 +33,8 @@ public class BasketFrontController extends HttpServlet {
 		switch (requestURI) {
 		case "/BasketView.bs" 	: forward = new BasketViewAction().execute(request, response);		break;
 		case "/BasketAdd.bs" 	: forward = new BasketAddAction().execute(request, response);		break;
-		
+		case "/BasketItemCntMinus.bs" 	: forward = new BasketItemCntMinusAction().execute(request, response);		break;
+		case "/BasketItemCntPlus.bs" 	: forward = new BasketItemCntPlusAction().execute(request, response);		break;
 		}
 		
 		//전송에 대한 일괄처리
