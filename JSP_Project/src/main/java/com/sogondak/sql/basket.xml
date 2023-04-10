@@ -29,7 +29,7 @@
 	</update>
 
 	<update id="BasketItemCntPlus" parameterType="hashmap">
-	SELECT SUM(total_price) FROM (SELECT SUM(howmany*price) as total_priceFROM basket WHERE useridnumber = #{userIDNumber})
+		update basket set howmany = howmany+1 WHERE userIDNumber = #{userIDNumber} AND itemname = #{itemname}
 	</update>
 	
 	<select id="getTotalPaymentAmount" parameterType="_int" resultType="_int">

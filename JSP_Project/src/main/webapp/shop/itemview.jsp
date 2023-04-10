@@ -70,28 +70,30 @@
                                   </li>
                             </ul>
 
-                            <form action="" method="GET">
-                                <input type="hidden" name="product-title" value="Activewear">
+                            <form action="/BasketAdd.bs" method="GET">
+                                <input type="hidden" name="itemname" value="${item.itemname}">
+                                <input type="hidden" name="userIDNumber" value="${userIsLogin.userIDNumber}">
+                                <input type="hidden" name="price" value="${item.price}">
                                 <div class="row">
                                     
                                     <div class="col-auto">
                                         <ul class="list-inline pb-3">
-                                            <li class="list-inline-item text-right">
-                                                수량
-                                                <input type="hidden" name="product-quanity" id="product-quanity" value="1">
-                                            </li>
-                                            <li class="list-inline-item"><span class="btn btn-success" id="btn-minus">-</span></li>
-                                            <li class="list-inline-item"><span class="badge bg-secondary" id="var-value">1</span></li>
-                                            <li class="list-inline-item"><span class="btn btn-success" id="btn-plus">+</span></li>
+<!--                                             <li class="list-inline-item text-right"> -->
+<!--                                                 수량 -->
+<!--                                                 <input type="hidden" name="product-quanity" id="product-quanity" value="1"> -->
+<!--                                             </li> -->
+<!--                                             <li class="list-inline-item"><span class="btn btn-success" id="btn-minus">-</span></li> -->
+<!--                                             <li class="list-inline-item"><span class="badge bg-secondary" id="var-value">1</span></li> -->
+<!--                                             <li class="list-inline-item"><span class="btn btn-success" id="btn-plus">+</span></li> -->
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="row pb-3">
                                     <div class="col d-grid">
-                                        <button type="submit" class="btn btn-success btn-lg" name="submit" value="buy">구매하기</button>
+                                        <button type="submit" class="btn btn-success btn-lg">구매하기</button>
                                     </div>
                                     <div class="col d-grid">
-                                        <button type="submit" class="btn btn-success btn-lg" name="submit" value="addtocard">장바구니</button>
+                                        <button type="submit" class="btn btn-success btn-lg">장바구니</button>
                                     </div>
                                 </div>
                             </form>
