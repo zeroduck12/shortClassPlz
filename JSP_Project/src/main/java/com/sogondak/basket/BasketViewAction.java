@@ -18,6 +18,7 @@ public class BasketViewAction implements Action{
 		
 		int userIDNumber = Integer.parseInt(request.getParameter("userIDNumber"));
 		
+		int totalPaymentAmount = bdao.getTotalPaymentAmount(userIDNumber);
 
 		int totalCnt = bdao.getBasketCnt(userIDNumber);
 
@@ -53,6 +54,8 @@ public class BasketViewAction implements Action{
 		request.setAttribute("endPage", endPage);
 		
 		request.setAttribute("basketList", bdao.getBasketList(startRow, endRow, userIDNumber));
+		request.setAttribute("totalPaymentAmount",totalPaymentAmount);
+
 		forward.setRedirect(false);
 		forward.setPath("/shop/basket.jsp");
 

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="${pageContext.request.contextPath}/shop/assets/img/apple-icon.png">
-    <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/shop/assets/img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/shop/assets/웹사이트 img/나봉이1.jpg">
 
     <link rel="stylesheet" href="${pageContext.request.contextPath}/shop/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/shop/assets/css/templatemo.css">
@@ -18,6 +18,12 @@
 
     <!-- Load fonts style after rendering the layout styles -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/shop/assets/css/fontawesome.min.css">
+    <style>
+    /* bootstrap.min.css 를 변경하면 안되는데 인덱스 페이지에의 이부분만 수정하면 되서 이곳에다가 스타일 사용함 */
+    .row{
+        justify-content: center;
+    }
+    </style>
 </head>
 <body>
     <!-- TopNav 와 header -->
@@ -44,7 +50,7 @@
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left align-self-center">
-                                <h1 class="h1 text-success"><b>3월 마켓 이벤트</b></h1>
+                                <h1 class="h1"><b>3월 마켓 이벤트</b></h1>
                                 <h3 class="h2">구매자 전원 스티커 2종 증정!</h3>
                                 <p>
                                     ෆ소곤소곤 우리 이야기ෆ<br>
@@ -67,7 +73,7 @@
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left">
-                                <h1 class="h1 text-success"><b>3월 신상 올인원팩</b></h1>
+                                <h1 class="h1"><b>3월 신상 올인원팩</b></h1>
                                 <h3 class="h2">(3월 신상) 씰스티커 4종 + 모조지 8매</h3>
                                 <p>
                                     [할인가]<br>
@@ -86,7 +92,7 @@
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left">
-                                <h1 class="h1 text-success"><b>모조지 세트 (총 10매)</b></h1>
+                                <h1 class="h1"><b>모조지 세트 (총 10매)</b></h1>
                                 <h3 class="h2">총 10매(5종x2매)로 구성된 set 상품입니다.</h3>
                                 <p>
                                     모조지<br>

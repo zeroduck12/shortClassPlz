@@ -88,6 +88,10 @@ public class BasketDAO {
 		
 		return result;
 	}
+
+	public int getTotalPaymentAmount(int userIDNumber) {
+		return sqlSession.selectOne("Basket.getTotalPaymentAmount",userIDNumber);
+	}
 	
 	
 }

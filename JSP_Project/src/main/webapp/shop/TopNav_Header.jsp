@@ -6,7 +6,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
 </head>
 <body>
 <!-- Start Top Nav -->
@@ -15,13 +14,13 @@
             <div class="w-100 d-flex justify-content-between">
                 <div>
                     <i class="fa fa-envelope mx-2"></i>
-                    <a class="navbar-sm-brand text-light text-decoration-none">sogondak@company.com</a>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:sogondak_@naver.com">sogondak_@naver.com</a>
                     <i class="fa fa-phone mx-2"></i>
-                    <a class="navbar-sm-brand text-light text-decoration-none">010-2643-2428</a>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:010-2643-2428">010-2643-2428</a>
                 </div>
                 <div>
-                    <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
-                    <a class="text-light" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.facebook.com/profile.php?id=100083355710843&mibextid=LQQJ4d" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.instagram.com/sogondak/" target="_blank"><i class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
 <!--                     <a class="text-light" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter fa-sm fa-fw me-2"></i></a> -->
 <!--                     <a class="text-light" href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin fa-sm fa-fw"></i></a> -->
                 </div>
@@ -47,16 +46,16 @@
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="${pageContext.request.contextPath}/shop/index.jsp">Home</a>
+                            <a class="nav-link" href="${pageContext.request.contextPath}/shop/index.jsp">홈</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="${pageContext.request.contextPath}/shop/about.jsp">About</a>
+                            <a class="nav-link" href="${pageContext.request.contextPath}/shop/about.jsp">소개</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="${pageContext.request.contextPath}/ItemList.it">Shop</a>
+                            <a class="nav-link" href="${pageContext.request.contextPath}/ItemList.it">상품</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="${pageContext.request.contextPath}/BoardList.bo">Contact</a>
+                            <a class="nav-link" href="${pageContext.request.contextPath}/BoardList.bo">고객센터</a>
                         </li>
                     </ul>
                 </div>

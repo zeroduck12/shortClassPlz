@@ -6,11 +6,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>소곤닥 - 소통</title>
+<title>SOGONDAK MARKET</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="${pageContext.request.contextPath}/shop/assets/img/apple-icon.png">
-    <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/assets/img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/shop/assets/웹사이트 img/나봉이1.jpg">
 
     <link rel="stylesheet" href="${pageContext.request.contextPath}/shop/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/shop/assets/css/templatemo.css">
@@ -20,21 +20,30 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/shop/assets/css/fontawesome.min.css">
 <style>
    a:visited{
-      color:#ce93d8;
+      color:#000000;
       text-decoration:none;
    }
    a:hover{
-      color:#ce93d8;
+      color:#000000;
       text-decoration:none;
       font-weight:bold;
    }
    a:link {
-      color:#ce93d8;
+      color:#000000;
       text-decoration:none;
    }
    table{
       margin: 0 auto;
    }
+</style>
+<style>
+   a:visited{
+      color:#000000;
+      text-decoration:none;
+   }
+   a:link {
+      color:#000000;
+      text-decoration:none;
 </style>
 </head>
 <body>

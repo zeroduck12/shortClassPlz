@@ -65,6 +65,9 @@
 	<c:set var="nowPage" value="${requestScope.nowPage }"/>
 	<c:set var="startPage" value="${requestScope.startPage }"/>
 	<c:set var="endPage" value="${requestScope.endPage }"/>
+	
+	<c:set var="totalPaymentAmount" value="${requestScope.totalPaymentAmount }"/>
+	
 	<div>
       <table style="width:900px;border:0px;">
          <tr align="right" valign="middle">
@@ -103,7 +106,7 @@
 			        </c:forEach>
 			        <tr align="center" valign="middle">
 		        	<td colspan=6>합계</td>
-		        	<td> 여기에다가 총합계 가격</td>
+		        	<td> ${totalPaymentAmount} 원</td>
 		        	</tr>
 	        </c:when>
 	        	<c:otherwise>
