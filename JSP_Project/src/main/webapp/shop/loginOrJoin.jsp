@@ -6,14 +6,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>소곤닥 - 회원가입 or 로그인</title>
+<title>SOGONDAK MARKET</title>
 <!-- 제이쿼리 추가했다. -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/shop/assets/웹사이트 img/나봉이1.jpg">
 
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/templatemo.css">
@@ -22,6 +22,15 @@
     <!-- Load fonts style after rendering the layout styles -->
     <link rel="stylesheet" href="assets/css/fontawesome.min.css">
 </head>
+<style>
+   a:visited{
+      color:#000000;
+      text-decoration:none;
+   }
+   a:link {
+      color:#000000;
+      text-decoration:none;
+</style>
 <body>
     <!-- TopNav 와 header -->
 	<%@ include file = "TopNav_Header.jsp" %>

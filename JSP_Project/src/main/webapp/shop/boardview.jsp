@@ -14,7 +14,7 @@
    }
 </style>
     <link rel="apple-touch-icon" href="${pageContext.request.contextPath}/shop/assets/img/apple-icon.png">
-    <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/shop/assets/img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/shop/assets/웹사이트 img/나봉이1.jpg">
 
     <link rel="stylesheet" href="${pageContext.request.contextPath}/shop/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/shop/assets/css/templatemo.css">

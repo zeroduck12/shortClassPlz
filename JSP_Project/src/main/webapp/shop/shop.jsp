@@ -12,7 +12,7 @@
 <link rel="apple-touch-icon"
 	href="${pageContext.request.contextPath}/shop/assets/img/apple-icon.png">
 <link rel="shortcut icon" type="image/x-icon"
-	href="${pageContext.request.contextPath}/shop/assets/img/favicon.ico">
+	href="${pageContext.request.contextPath}/shop/assets/웹사이트 img/나봉이1.jpg">
 
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/shop/assets/css/bootstrap.min.css">
@@ -25,6 +25,15 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/shop/assets/css/fontawesome.min.css">
 </head>
+<style>
+   a:visited{
+      color:#000000;
+      text-decoration:none;
+   }
+   a:link {
+      color:#000000;
+      text-decoration:none;
+</style>
 <body>
 	<!-- TopNav 와 header -->
 	<%@ include file="TopNav_Header.jsp"%>
