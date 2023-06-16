@@ -119,10 +119,11 @@ CREATE TABLE basket(
 	itemname		varchar2(300),
 	price			number(10),
 	howmany			number(10),
-	CONSTRAINT basket_user_fk FOREIGN key(userIDNumber) REFERENCES "USER"(userIDNumber)
+	CONSTRAINT basket_user_fk FOREIGN key(userIDNumber) REFERENCES "USER"(userIDNumber),
+	CONSTRAINT basket_item_fk FOREIGN key(itemname) REFERENCES itemlist(itemname)
 );
 
-INSERT INTO BASKET values(1, '고구마스티커~', 2300, 5 );
+INSERT INTO BASKET values(1, '달콤딸기 씰스티커', 2300, 1 );
 SELECT * FROM basket;
 
 SELECT * FROM (
