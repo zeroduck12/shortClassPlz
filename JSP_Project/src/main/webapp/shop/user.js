@@ -61,7 +61,7 @@
 	 }
 	 //휴대폰 번호
  	 if($("#userphone").val()==""){
-		 alert("휴대폰 번호 입력하라니깐?");
+		 alert("휴대폰 번호를 입력해 주세요");
 		 $("#userphone").focus();
 		 return false;
 	 }

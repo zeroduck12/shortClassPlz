@@ -90,7 +90,12 @@ public class BasketDAO {
 	}
 
 	public int getTotalPaymentAmount(int userIDNumber) {
-		return sqlSession.selectOne("Basket.getTotalPaymentAmount",userIDNumber);
+		
+		int result = 0;
+		if( sqlSession.selectOne("Basket.getTotalPaymentAmount",userIDNumber) != null ) {
+		result = sqlSession.selectOne("Basket.getTotalPaymentAmount",userIDNumber);
+		}
+		return result;
 	}
 	
 	

@@ -99,6 +99,5 @@
     <script src="${pageContext.request.contextPath}/shop/assets/js/custom.js"></script>
     <!-- End Script -->
     
-    
 </body>
 </html>

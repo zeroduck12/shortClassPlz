@@ -2,7 +2,6 @@ package com.sogondak.basket.dao;
 
 public class BasketBean {
 
-	
 	private int userIDNumber;
 	private String itemname;
 	private int price;

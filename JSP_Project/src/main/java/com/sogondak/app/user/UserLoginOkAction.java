@@ -21,7 +21,6 @@ public class UserLoginOkAction implements Action {
 		String userpw = request.getParameter("userpw");
 		
 		if(udao.login(userid,userpw)) {
-			udao.loginStatusChangeToLogin(userid);
 			
 			request.getSession().setAttribute("userIsLogin", udao.userIsLogin(userid));
 			request.getSession().setMaxInactiveInterval(60*30);

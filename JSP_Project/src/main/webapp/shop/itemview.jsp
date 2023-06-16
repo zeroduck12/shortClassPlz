@@ -89,15 +89,26 @@
                                     </div>
                                 </div>
                                 <div class="row pb-3">
-                                    <div class="col d-grid">
-                                        <button type="submit" class="btn btn-success btn-lg">구매하기</button>
-                                    </div>
-                                    <div class="col d-grid">
-                                        <button type="submit" class="btn btn-success btn-lg">장바구니</button>
-                                    </div>
+                                
+	                                
+	                          		<c:if test="${empty userIsLogin}">
+										 <div class="col d-grid">
+	                                        <a href="javascript:loginPlz()" class="btn btn-success btn-lg">구매하기</a>
+	                                    </div>
+	                                    <div class="col d-grid">
+	                                        <a href="javascript:loginPlz()" class="btn btn-success btn-lg">장바구니</a>
+	                                    </div>
+									</c:if>
+									<c:if test="${not empty userIsLogin}">
+										 <div class="col d-grid">
+	                                        <button type="submit" class="btn btn-success btn-lg">구매하기</button>
+	                                    </div>
+	                                    <div class="col d-grid">
+	                                        <button type="submit" class="btn btn-success btn-lg">장바구니</button>
+	                                    </div>
+									</c:if> 
                                 </div>
                             </form>
-
                         </div>
                     </div>
                 </div>

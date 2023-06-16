@@ -1,6 +1,7 @@
 package com.sogondak.app.user.dao;
 
 public class UserDTO {
+	private int userIDNumber;
 	private String userid;
 	private String userpw;
 	private String username;
@@ -9,8 +10,7 @@ public class UserDTO {
 	private String addr;
 	private String addrdetail;
 	private String addretc;
-	private int loginstatus;
-	private int userIDNumber;
+
 	
 	public String getUserid() {
 		return userid;
@@ -59,12 +59,6 @@ public class UserDTO {
 	}
 	public void setAddretc(String addretc) {
 		this.addretc = addretc;
-	}
-	public int getLoginstatus() {
-		return loginstatus;
-	}
-	public void setLoginstatus(int loginstatus) {
-		this.loginstatus = loginstatus;
 	}
 	public int getUserIDNumber() {
 		return userIDNumber;

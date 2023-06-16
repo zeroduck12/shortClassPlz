@@ -40,8 +40,6 @@
     <%@ include file = "modal.jsp" %>
 	<!-- Close Modal -->
 
-
-
 	<!-- Start Content Page -->
     <div class="container-fluid bg-light py-5">
         <div class="col-md-6 m-auto text-center">
@@ -59,30 +57,13 @@
 			</form>
 			<!-- End 로그인 부분 -->
 			<br><br>
-<!-- 			<input type="button" value="로그아웃" href="javascript:loginStatusChangeToLogout()"> -->
         	<!-- start 회원가입 부분 -->
 				<a href="joinview.jsp">회원가입</a><br>
-				<a href="joinview.jsp">회원탈퇴</a>
-			<!-- 	여기말고 다른데다가 놓아야할듯 -->
-				
+<!-- 				<a href="joinview.jsp">회원탈퇴</a> -->
 			<!-- End 회원가입 부분 -->
 		</div>
     </div>
     <!-- End Content Page -->
-
-<!-- 	로그인상태 테스트 -->
-<!-- 		<div> -->
-<%-- 		<c:if test="${empty userIsLogin}"> --%>
-<!-- 		<p>로그인 하지 않은 상태</p> -->
-<!-- 		<a href="login">로그인 하러 가기</a> -->
-<%-- 		</c:if> --%>
-<%-- 		<c:if test="${not empty userIsLogin}"> --%>
-<!-- 		<p>로그인 한 상태</p> -->
-<%-- 		<p>${userIsLogin.username}님 환영합니다</p> --%>
-<!-- 		<a href="logout">로그아웃</a> -->
-<%-- 		</c:if> --%>
-<!-- 		</div> -->
-<!-- 	로그인상태 테스트 -->
 	   
 	<!-- Start Footer -->
 	<%@ include file = "footer.jsp" %>

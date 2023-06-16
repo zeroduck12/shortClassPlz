@@ -1,6 +1,7 @@
 package com.sogondak.board.dao;
 
 public class ReplyBean {
+	
 	private int replynum;	
 	private String username;	
 	private String password;	

@@ -25,9 +25,9 @@ public class ItemListAction implements Action {
 
 
 		//[1][2][3]
-		int pageSize = 10;
-		int endRow = page  *10;
-		int startRow = endRow -9;
+		int pageSize = 9;			// 한 페이지에 나올 상품의 갯수
+		int endRow = page  *9;		// 위의 숫자와 같게 한다.
+		int startRow = endRow -8;	// 위의 숫자에서 하나 낮은 값으로 한다.
 		
 		//클릭할 페이지[1][2][3][4]--- 에 대한 부분에서 이게 한 100개넘어가면 10개씩 나오도록할것이다
 		int startPage = (page-1)/pageSize*pageSize +1;

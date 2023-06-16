@@ -80,7 +80,7 @@
 
 			<div class="col-lg-9">
 				<div class="row">
-					<p><h2>상품 리스트</h2></p>
+					<h2>상품 리스트</h2>
 					<p align="right">상품 총 개수 ${totalCnt } 개</p>
 
 					<c:choose>

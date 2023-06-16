@@ -5,7 +5,7 @@
 <mapper namespace="User">
 	
 	<insert id="join" parameterType="userdto">
-		INSERT INTO "USER" values(#{userid}, #{userpw}, #{username}, #{userphone}, #{zipcode}, #{addr}, #{addrdetail}, #{addretc}, 0, user_seq.nextval)
+		INSERT INTO "USER" values(user_seq.nextval, #{userid}, #{userpw}, #{username}, #{userphone}, #{zipcode}, #{addr}, #{addrdetail}, #{addretc} )
 	</insert>
 	
 	<select id="login" parameterType="hashmap" resultType="_int">
@@ -15,10 +15,6 @@
 	<select id="checkId" parameterType="string" resultType="_int">
 		SELECT count(*) FROM "USER" WHERE USERID = #{userid}
 	</select>
-	
-	<update id="loginStatusChangeToLogin" parameterType="string">
-		update "USER" set loginstatus = 1 WHERE userid = #{userid}
-	</update>
 	
 	<select id="userIsLogin" parameterType="string" resultType="userdto">
 		SELECT * FROM "USER" WHERE userid = #{userid}
