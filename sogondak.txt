@@ -1,17 +1,32 @@
+------유저테이블에 userIDNumber 추가하기, SEQUENCE 추가하자
+CREATE SEQUENCE user_seq
+START WITH 1
+INCREMENT BY 1
+nocache
+; 
+
 -- 회원가입한 회원들의 정보를 담은 "USER테이블 생성"
 CREATE TABLE "USER"(
-	userid		varchar2(300) PRIMARY KEY,
-	userpw		varchar2(300),
-	username	varchar2(300),
-	userphone	varchar2(300),
-	zipcode		varchar2(100),
-	addr		varchar2(300),
-	addrdetail	varchar2(1000),
-	addretc		varchar2(500)
+	userIDNumber	number(10) PRIMARY KEY,
+	userid			varchar2(300) UNIQUE,
+	userpw			varchar2(300),
+	username		varchar2(300),
+	userphone		varchar2(300),
+	zipcode			varchar2(100),
+	addr			varchar2(300),
+	addrdetail		varchar2(1000),
+	addretc			varchar2(500)
 );
 
-INSERT INTO "USER" values('admin34', 'admin123', '홍길동', '01012345678','10101', '서울시', '송파구', '(잠실동)');
+
+INSERT INTO "USER" values(user_seq.nextval,'admin', 'admin123', '홍길동', '01012345678','10101', '서울시', '송파구', '(잠실동)');
 SELECT * FROM "USER" u ;
+
+
+-- 게시판 테이블에서 사용할 테이블 시퀀스 만들기
+CREATE SEQUENCE board_seq
+INCREMENT BY 1
+START WITH 1;
 
 --게시판 테이블
 CREATE TABLE tbl_board(
@@ -24,15 +39,9 @@ CREATE TABLE tbl_board(
 );
 
 
-CREATE SEQUENCE board_seq
-INCREMENT BY 1
-START WITH 1;
-
-INSERT INTO TBL_BOARD VALUES (board_seq.nextval, '태dd스트제목', '테스트ddd내gg용', 'gg태스트작성자', SYSDATE, 0);
+INSERT INTO TBL_BOARD VALUES (board_seq.nextval, '테스트제목', '테스트내용', '테스트작성자', SYSDATE, 3);
 
 SELECT  * FROM tbl_board;
-
-SELECT count(*) FROM TBL_BOARD tb ;
 
 -- 게시판 페이징 처리하기
 --row넘버를 기준으로 10건씩 자를 것이다
@@ -42,12 +51,20 @@ SELECT * from(
 										ORDER BY BOARDNUM DESC 
 										) A
 		) B
-WHERE B.r BETWEEN 41 and 50
+WHERE B.r BETWEEN 11 and 20
 ;
 
+-- readcount 늘리기
+-- UPDATE TBL_BOARD  SET boardreadcount = boardreadcount+1
+-- WHERE boardnum = 2 ;
 
-UPDATE TBL_BOARD  SET boardreadcount = boardreadcount+1
-WHERE boardnum = 2 ;
+
+-- 댓글 시퀀스
+CREATE SEQUENCE reply_seq
+START WITH 1
+INCREMENT BY 1
+nocache
+; 
 
 
 -- 댓글 쓰는 칸 추가
@@ -60,80 +77,17 @@ CREATE TABLE tbl_reply(
 	CONSTRAINT rep_bd_fk FOREIGN key(boardnum) REFERENCES tbl_board(boardnum)
 );
 
-CREATE SEQUENCE reply_seq
-START WITH 1
-INCREMENT BY 1
-nocache
-; 
 
-INSERT INTO tbl_reply VALUES (reply_seq.nextval, '태dd스트내용', '테스트d작성자', '태스트비밀ㅈ벟로', 1);
+INSERT INTO tbl_reply VALUES (reply_seq.nextval, '댓글태스트내용', '댓글 테스트 작성자', '댓글태스트비밀번호', 1);
 -- 댓글 끝
 
-
-
-
-
--- 판매할 상품 리스트 테이블
-CREATE TABLE itemlist(
-	itemname	varchar2(300) PRIMARY key,
-	price		varchar2(300),
-	explain		varchar2(1000),
-	spec		varchar2(100),
-	size1		varchar2(300),
-	size2		varchar2(300),
-	size3		varchar2(300),
-	imgnumber	number(10)
-);
-
-
+-- 아이템 시퀀스
 CREATE SEQUENCE itemnumber_seq
 START WITH 1
 INCREMENT BY 1
 nocache
 ; 
 
-
-INSERT INTO itemlist VALUES ('고구마 가득 씰스티커', '2300원','가을에 잘 어울리는 고구마 씰스티커에요!<br>고구마 침낭이 따뜻해보이죠?❤️‍🔥<br>', '무광 유포지' ,'65 x 150 mm', NULL, NULL, itemnumber_seq.nextval);
-INSERT INTO itemlist VALUES ('달콤딸기 씰스티커', '2300원','3월 신상 공개✧･ﾟ: *✧･ﾟ:*<br>첫 번째 신상은 "달콤딸기" 입니다!<br>그냥 먹어도 맛있지만 생크림과 먹는 딸기는 더 달콤하고 맛있는 거 같아요😋<br>', '무광 유포지' ,'65 x 150 mm', NULL, NULL, itemnumber_seq.nextval);
-INSERT INTO itemlist VALUES ('뜨개질 씰스티커', '2300원','3월 신상 공개✧･ﾟ: *✧･ﾟ:*<br>네 번째 신상은 "뜨개질"입니당<br>포근포근 니트는 사랑이에요😆<br>', '무광 유포지' ,'65 x 150 mm', NULL, NULL, itemnumber_seq.nextval);
-INSERT INTO itemlist VALUES ('레모네이드 씰스티커', '2300원','3월 신상 공개✧･ﾟ: *✧･ﾟ:*<br>세 번째 신상은 "레모네이드"!<br>한입 베어 문 레몬 너무 귀여워요😆<br>', '무광 유포지' ,'65 x 150 mm', NULL, NULL, itemnumber_seq.nextval);
-INSERT INTO itemlist VALUES ('모조지 세트 (총 10매)', '2200원','총 10매(5종x2매)로 구성된 set 상품입니다.<br>⚠️하트 거울 모조지 1mm 칼선 밀림있습니다.', NULL,'약 80x80 mm', '약 95x55 mm', NULL, itemnumber_seq.nextval);
-INSERT INTO itemlist VALUES ('미술시간 씰스티커', '2300원',' ⭐️트웬티폼 10월 4일 open⭐<br>️알록달록 네번째 씰스티커🎨🎨<br>첫 마켓 오픈하기 전부터 생각했던 도안을 이제 공개하게 됐어요😆<br>뽀짝한 나봉이 찾아보세요<br>️', '무광 유포지' ,'65 x 150 mm', NULL, NULL, itemnumber_seq.nextval);
-INSERT INTO itemlist VALUES ('선물포장 씰스티커', '2300원',' ⭐️트웬티 폼 10월 4일 open⭐<br>️이제야 올리는 신상 첫 개별 사진이에요🥲<br>선물포장 씰스티커(배이비 ver.)입니당💕<br>선물 상자 모조지와 세트에요~!<br>', '무광 유포지' ,'65 x 150 mm', NULL, NULL, itemnumber_seq.nextval);
-INSERT INTO itemlist VALUES ('수박 화채 떡 메모지', '1500원','수박 화채 떡 메모지<br>', '무광 유포지' ,'90 x 90 mm', '50매 내외', NULL, itemnumber_seq.nextval);
-INSERT INTO itemlist VALUES ('쥬스 데코 스티커 세트(3매)', '1500원','<p>총 3매로 구성된 세트 상품입니다.<br>', '유광 pvc캘지' ,'150 x 40 mm', NULL, NULL, itemnumber_seq.nextval);
-INSERT INTO itemlist VALUES ('캠핑이 좋아 씰스티커', '2300원','⭐️트웬티폼 10월 4일 open⭐<br>️두번째 스티커 테마는 캠핑이에요.<br>구워지고 있는 마시멜로 표정을 봐주세요😆<br>', '무광 유포지' ,'65 x 150 mm', NULL, NULL, itemnumber_seq.nextval);
-INSERT INTO itemlist VALUES ('튤립가든 씰스티커', '2300원','3월 신상 공개✧･ﾟ: *✧･ﾟ:*<br>두 번째 신상은 "튤립가든"이에요🌷<br><br>튤립은 색이 정말 다양한데,<br>저는 주황색이 제일 예뻐 보이더라구요!<br>예쁜 튤립 가득한 가든으로 놀러 오세요🧡<br>', '무광 유포지' ,'65 x 150 mm', NULL, NULL, itemnumber_seq.nextval);
-
-SELECT  * FROM itemlist;
-
---DROP TABLE itemlist;
---TRUNCATE TABLE itemlist;
-
-
--- 유저 테이블에 로그인에 관련된 상태를 의미하는 숫자를 추가하기 : 1은 로그인된 상태, 0은 비로그인 상태, -1은 회원탈퇴된 상태
-ALTER TABLE "USER" add(
-loginstatus		number(10)
-);
-
-SELECT * FROM "USER" u ;
-
---  장바구니 테이블만들기 : basket
-CREATE TABLE basket(
-	userIDNumber 	number(10),
-	itemname		varchar2(300),
-	price			number(10),
-	howmany			number(10)
-);
-
---INSERT INTO BASKET values(1, '고구마스티커~', 2300, 5 );
-SELECT * FROM basket;
---DELETE basket WHERE howmany=5;
---DROP TABLE BASKET ;
-
-
---------------------4월 7일 2시 22분 테이블 삭제후 다시 만들것임 이유 : itemlist의 price테이블을 varchar2에서 number로 바꿀 것이기에ㅇ
-DROP TABLE ITEMLIST ;
 CREATE TABLE itemlist(
 	itemname	varchar2(300) PRIMARY key,
 	price		number(10),
@@ -159,25 +113,37 @@ INSERT INTO itemlist VALUES ('튤립가든 씰스티커', 2300,'3월 신상 공�
 SELECT  * FROM itemlist;
 
 
-		SELECT * FROM (
-			SELECT rownum r, A.* FROM 
-				(SELECT * FROM basket where userIDNumber=1 ORDER BY userIDNumber DESC) A ) B
-		WHERE 	B.r BETWEEN 1 AND 10
-
-------유저테이블에 userIDNumber 추가하기, SEQUENCE 추가하자
-CREATE SEQUENCE user_seq
-START WITH 1
-INCREMENT BY 1
-nocache
-; 
-
-ALTER TABLE "USER" add(
-userIDNumber	number(10) PRIMARY key
+--  장바구니 테이블만들기 : basket
+CREATE TABLE basket(
+	userIDNumber 	number(10),
+	itemname		varchar2(300),
+	price			number(10),
+	howmany			number(10),
+	CONSTRAINT basket_user_fk FOREIGN key(userIDNumber) REFERENCES "USER"(userIDNumber)
 );
 
-SELECT * FROM "USER" u ;
+INSERT INTO BASKET values(1, '고구마스티커~', 2300, 5 );
+SELECT * FROM basket;
 
-INSERT INTO "USER" values('asd' , 'asdasdasd', 'asdasdasd', '01010101','asdas주소', 'asdasdasd', 'asdasdasd', 'asdasdasd', 0, user_seq.nextval);
+SELECT * FROM (
+	SELECT rownum r, A.* FROM 
+		(SELECT * FROM basket where userIDNumber=1 ORDER BY userIDNumber DESC) A ) B
+WHERE 	B.r BETWEEN 1 AND 10
 
---그냥 테이블 싹 비우고 다시 만들기
+
+
+--update basket set howmany = 5+1 WHERE userIDNumber = 1 AND itemname = '캠핑이 좋아 씰스티커';
+
+--SELECT sum(howmany)*sum(PRICE)  FROM basket WHERE USERIDNUMBER = 1;
+
+--SELECT * FROM BASKET b ;
+--SELECT howmany  FROM basket WHERE USERIDNUMBER = 1;
+--SELECT PRICE FROM basket WHERE USERIDNUMBER = 1;
+--SELECT howmany*price AS 소계 FROM basket WHERE USERIDNUMBER = 1;
+
+
+--SELECT SUM(price) FROM basket WHERE USERIDNUMBER = 1;
+
+
+--SELECT SUM(total_price) FROM (SELECT SUM(howmany*price) as total_price FROM basket WHERE useridnumber = 1);
 
